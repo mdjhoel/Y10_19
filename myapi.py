@@ -35,8 +35,10 @@ def main():
 		writeHTML(data_as_str)  # call function to write string data to HTML file
 
 		# load as a JSON to access specific data more easily
-		datajson = response.json()
-		print(datajson['city'])
+                datajson = response.json()
+                cities = datajson['nearbyCities']
+                for city in cities:
+                        print(city)
 		
 	else:
 		data = "Error has occured"
