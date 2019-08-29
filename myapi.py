@@ -1,15 +1,13 @@
 '''
 myapi.py 
 - simple program to demo using a web API with requests Python module
-- also uses json Python module to demo how to access parts of received data
 - secondary function to demo how to write out received data to an HTML file 
 '''
 
 import requests
-import json
 
 # Find APIs at - https://apilist.fun/
-# some will require an API key
+# some will require an API key, boo hiss!
 
 # cool geo example
 # https://geo-info.co/?ref=apilist.fun
@@ -33,12 +31,12 @@ def main():
 	# if API call is correct
 	if (response.status_code == 200):
 		data = response.content # response comes in as byte data type
-		data = data.decode()	# decode to str
-		writeHTML(data)		# call function to write str to HTML file ttc.html
+		data_as_str = data.decode()	# decode to str
+		writeHTML(data_as_str)  # call function to write string data to HTML file
 
 		# load as a JSON to access specific data more easily
-		data = json.loads(data) # load str to json dictionary
-		print(data["city"])
+		datajson = response.json()
+		print(datajson['city'])
 		
 	else:
 		data = "Error has occured"
