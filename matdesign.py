@@ -8,6 +8,7 @@ def test(event):
     root.filename =  filedialog.askopenfilename(initialdir = "/Users/mhoel/Pictures",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
     myimg = ImageTk.PhotoImage(file=root.filename)
     can2.create_image(10, 10, image = myimg, anchor = NW)
+    print("test")
     
 
 root = Tk()
