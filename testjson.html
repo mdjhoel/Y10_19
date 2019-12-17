@@ -1,0 +1,35 @@
+<script>
+data = {
+  "2wGFJM53qmPUzlHR6cnGbgZ7e5o1": {
+    "-LvvDCWrC6EvfpHiN_GL": {
+      "content": "this is a test",
+      "timestamp": 1576172837000
+    },
+    "-LvvGEjQMj4ejddq65ah": {
+      "content": "second test",
+      "timestamp": 1576173632492
+    }
+  },
+  "yaada34irC6EvfpHiN5031": {
+    "-LvvAMWrC6EvfpHiN_AB": {
+      "content": "another guy",
+      "timestamp": 1576172837000
+    },
+    "-LvvGEjQMj4ejyaddaaa": {
+      "content": "some other dude",
+      "timestamp": 1576173632492
+    }
+  }
+}
+    
+userkeys = Object.keys(data);
+for (i=0;i < userkeys.length; i++) {
+    tempkeys = Object.keys(data[userkeys[i]]);
+    tempvals = Object.values(data[userkeys[i]]);
+    for (j = 0; j < tempkeys.length; j++) {
+       console.log(tempvals[j].content);                         
+    }
+}
+    
+
+</script>
