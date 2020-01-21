@@ -1,0 +1,29 @@
+<html>
+
+<body>
+
+<div id="imgTest"><br></div>
+            <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" /><br>
+
+</body>
+
+
+<script>
+
+        function encodeImageFileAsURL() {
+            var filesSelected = document.getElementById("inputFileToLoad").files;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) {
+                    var srcData = fileLoadedEvent.target.result; document.getElementById("imgTest").innerHTML = "<img src='" + srcData + "' class='circle' width='100'/><br>";
+                    console.log(srcData);
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        } // end function
+
+
+</script>
+
+</html>
