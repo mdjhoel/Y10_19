@@ -1,3 +1,8 @@
+'''
+guess.py - program to solve a guessing game
+mhoel - programmer
+September 2019 - initial programming
+'''
 youguess = False
 numtries = 0
 while youguess == False:
