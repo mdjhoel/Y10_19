@@ -40,7 +40,9 @@
     </body>
     
     <script>
-        var map = L.map('map').setView([51.505, -0.09], 3);
+        //var map = L.map('map').setView([51.505, -0.09], 3);
+        
+        var map = L.map('map').setView([43.7, -79.35], 11);
 
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -48,7 +50,9 @@
         var editableLayers = new L.FeatureGroup();
         map.addLayer(editableLayers);
 
-        var geojsonFeature = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json";
+        //var geojsonFeature = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json";
+        
+        var geojsonFeature = "https://mdjhoel.github.io/Y10_19/geojson/ttcsubway.geojson";
 
         var jsonLayer = new L.geoJson().addTo(map);
 
